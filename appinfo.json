@@ -1,0 +1,10 @@
+{
+	"id": "net.supudo.apps.webos.neolog",
+	"version": "1.0.0",
+	"vendor": "supudo.net",
+	"type": "web",
+	"main": "index.html",
+	"title": "Neolog",
+	"icon": "icon.png",
+    "uiRevision": "2"
+}

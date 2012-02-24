@@ -1,0 +1,78 @@
+enyo.kind({
+    name : "nl.Neolog",
+    kind : enyo.VFlexBox,
+    components : [ {
+        name : "pane",
+        kind : "Pane",
+        flex : 1,
+        onSelectView: "viewChanged",
+        components : [
+            { name : "loading", className : "bgpattern", kind : "nl.Loading", onBack : "goBackLoading" },
+            { name : "words", className : "bgpattern", kind : "nl.LettersAndNests", onSelect : "viewWord" },
+            { name : "wordDetails", className : "bgpattern", kind : "nl.WordDetails", onBack : "goBack" },
+            { name : "sendWord", className : "bgpattern", kind : "nl.SendWord" },
+            { name : "search", className : "bgpattern", kind : "nl.Search" },
+            { name : "preferences", className : "bgpattern", kind : "nl.Preferences" },
+            { name : "about", className : "bgpattern", kind : "nl.About" }
+        ]
+    },
+    {
+        name : "mainMenu",
+        kind : "AppMenu",
+        components : [
+          { name: "mnLettersAndNests", caption : "Letters & Nests", onclick : "showLettersAndNests" },
+          { name: "mnSendWord", caption : "Send word", onclick : "showSendWord" },
+          { name: "mnSearch", caption : "Search", onclick : "showSearch" },
+          { name: "mnPreferences", caption : "Preferences", onclick : "showPreferences" },
+          { name: "mnAbout", caption : "About", onclick : "showAbout" }
+        ]
+    } ],
+    // ------------------------------------------------
+    create : function() {
+        this.inherited(arguments);
+        enyo.g11n.setLocale({uiLocale: "bg"});
+        this.$.mainMenu.components[0].caption = $L('Menu_LettersAndNests');
+        this.$.mainMenu.components[1].caption = $L('Menu_SendWord');
+        this.$.mainMenu.components[2].caption = $L('Menu_Search');
+        this.$.mainMenu.components[3].caption = $L('Menu_Preferences');
+        this.$.mainMenu.components[4].caption = $L('Menu_About');
+        this.$.pane.selectViewByName("loading");
+    },
+    // App Menu ------------------------------------------------
+    openAppMenuHandler: function() {
+        this.$.appMenu.open();
+    },
+    closeAppMenuHandler: function() {
+        this.$.appMenu.close();
+    },
+    // ------------------------------------------------
+    viewWord : function(inSender, inWord) {
+        this.$.pane.selectViewByName("wordDetails");
+        //this.$.wordDetails.setWord(inWord);
+        //this.$.wordDetails.resetShare();
+    },
+    // ------------------------------------------------
+    goBackLoading : function(inSender, inEvent) {
+        this.showLettersAndNests();
+    },
+    goBack : function(inSender, inEvent) {
+        this.$.pane.back(inEvent);
+    },
+    // Menu ------------------------------------------------
+    showLettersAndNests : function() {
+        this.$.pane.selectViewByName("words");
+        //this.$.words.loadThings();
+    },
+    showSendWord : function() {
+    },
+    showSearch : function() {
+        this.$.pane.selectViewByName("search");
+    },
+    showPreferences : function() {
+        this.$.pane.selectViewByName("preferences");
+    },
+    showAbout : function() {
+        this.$.pane.selectViewByName("about");
+        this.$.about.viewAbout();
+    }
+});

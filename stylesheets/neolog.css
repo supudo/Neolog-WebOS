@@ -1,0 +1,19 @@
+/* splash screen */
+.bgpattern { background-color: #29435E; color: #ffffff; }
+
+.loadingLabel { text-align: center; position: fixed; left: 50%; top: 50%; margin-top: -30px; margin-left: -60px; }
+.loadingProgressBar { position: fixed; left: 50%; top: 50%; margin-left: -150px; width: 300px; }
+.loadingProgressBarSmall { position: fixed; left: 50%; top: 54%; margin-left: -50px; width: 100px; }
+
+.opIcon { padding-right: 6px; }
+
+.btn-post-cont { padding: 4px; width: 100%; text-align: center; margin-top: 10px; }
+.btn-post { background: url('../images/gaz.png') 0 0 no-repeat;
+    width: 280px; height: 64px; text-align: center; color: #ffffff; padding-top: 16px;
+ }
+.post-cat-dd { width: 90%; /* background-color: #DF9368; color: #000000; */ }
+.btn-post-error { color: #df9368; }
+
+.btn-send-message { background-color: #df9368; color: #000000; }
+
+.btn-share { background: url('../images/soc-share.png') 0 0 no-repeat; width: 44px; height: 44px; border: 0px; }
