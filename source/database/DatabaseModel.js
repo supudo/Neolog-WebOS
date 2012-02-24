@@ -17,7 +17,6 @@ var Nest = enyo.application.models.Nest = persistence.define('Nest', {
 
 var Word = enyo.application.models.Word = persistence.define('Word', {
     wid: 'INT',
-    cid: 'INT',
     word: 'TEXT',
     wordletter: 'TEXT',
     orderpos: 'INT',
@@ -25,7 +24,6 @@ var Word = enyo.application.models.Word = persistence.define('Word', {
     example: 'TEXT',
     ethimology: 'TEXT',
     description: 'TEXT',
-    derivatives: 'TEXT',
     commentcount: 'INT',
     addedbyurl: 'TEXT',
     addedbyemail: 'TEXT',
@@ -38,7 +36,6 @@ Word.textIndex('word');
 Word.textIndex('example');
 Word.textIndex('ethimology');
 Word.textIndex('description');
-Word.textIndex('derivatives');
 Word.textIndex('addedby');
 
 persistence.schemaSync();

@@ -46,9 +46,17 @@ enyo.kind({
     // ------------------------------------------------
     viewNest: function (inSender, inNest) {
         this.$.pane.selectViewByName("words");
+        this.$.words.setNest(inNest);
+        this.$.words.setLetter("");
+        this.$.words.setLetterPos("");
+        this.$.words.showItems();
     },
-    viewLetter: function (inSender, inLetter) {
+    viewLetter: function (inSender, inLetter, inLetterPos) {
         this.$.pane.selectViewByName("words");
+        this.$.words.setNest(null);
+        this.$.words.setLetter(inLetter);
+        this.$.words.setLetterPos(inLetterPos);
+        this.$.words.showItems();
     },
     viewWord : function(inSender, inWord) {
         this.$.pane.selectViewByName("wordDetails");

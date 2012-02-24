@@ -37,7 +37,7 @@ enyo.kind({
       var that = this;
 
       this.nestsItems = new Array();
-      Nest.all().order("nest", true).list(null, function (results) {
+      Nest.all().order("orderpos", true).list(null, function (results) {
           results.forEach(function (ent) {
               that.nestsItems.push(ent);
               that.refreshItems();
@@ -96,7 +96,10 @@ enyo.kind({
       }
       else {
           var letter = this.lettersItems[inEvent.rowIndex];
-          this.doLetterSelect(letter);
+          var letterPos = inEvent.rowIndex;
+          if (inEvent.rowIndex == this.lettersItems.length)
+              letterPos = "x";
+          this.doLetterSelect(letter.letter, letterPos);
       }
   },
   showNests: function() {
