@@ -7,7 +7,9 @@ enyo.kind({
             { name : "loading", className : "bgpattern", kind : "nl.Loading", onBack : "goBackLoading" },
             { name : "lettersAndNests", className : "bgpattern", kind : "nl.LettersAndNests", onNestSelect : "viewNest", onLetterSelect: "viewLetter" },
             { name : "words", className : "bgpattern", kind : "nl.Words", onBack : "goBack", onSelect : "viewWord" },
-            { name : "wordDetails", className : "bgpattern", kind : "nl.WordDetails", onBack : "goBack" },
+            { name : "wordDetails", className : "bgpattern", kind : "nl.WordDetails", onBack : "goBack", onSendComment: "sendWordComment", onViewComments: "viewWordComments" },
+            { name : "sendComent", className : "bgpattern", kind : "nl.SendComment", onBack : "goBack" },
+            { name : "wordComments", className : "bgpattern", kind : "nl.ViewComments", onBack : "goBack" },
             { name : "sendWord", className : "bgpattern", kind : "nl.SendWord" },
             { name : "search", className : "bgpattern", kind : "nl.Search" },
             { name : "preferences", className : "bgpattern", kind : "nl.Preferences" },
@@ -60,8 +62,16 @@ enyo.kind({
     },
     viewWord : function(inSender, inWord) {
         this.$.pane.selectViewByName("wordDetails");
-        //this.$.wordDetails.setWord(inWord);
-        //this.$.wordDetails.resetShare();
+        this.$.wordDetails.setWord(inWord);
+        this.$.wordDetails.resetShare();
+    },
+    sendWordComment: function(inSender, inWord) {
+        this.$.pane.selectViewByName("sendComent");
+        this.$.sendComent.setWord(inWord);
+    },
+    viewWordComments: function(inSender, inWord) {
+        this.$.pane.selectViewByName("wordComments");
+        this.$.wordComments.setWord(inWord);
     },
     // ------------------------------------------------
     goBackLoading : function(inSender, inEvent) {

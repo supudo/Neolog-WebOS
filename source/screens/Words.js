@@ -129,28 +129,9 @@ enyo.kind({
       enyo.application.persistence.flush(function(){ });
       this.wordItems.push(t);
       this.refresh();
-      //this.displayWords();
       if (this.wordCount == this.wordsDownloaded) {
           logThis(this, "Words download finished!");
           this.$.loadingSpinner.hide();
       }
-  },
-  displayWords: function() {
-      this.wordItems = new Array();
-      var that = this;
-      if (this.isNest)
-          Word.all().filter('nestid', '=', this.nest.nid).order("word", true).list(null, function (results) {
-              results.forEach(function (ent) {
-                  that.wordItems.push(ent);
-                  that.refresh();
-              });
-          });
-      else
-          Word.all().filter('wordletter', '=', this.letterPos).order("word", true).list(null, function (results) {
-              results.forEach(function (ent) {
-                  that.wordItems.push(ent);
-                  that.refresh();
-              });
-          });
   }
 });

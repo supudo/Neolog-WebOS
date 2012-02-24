@@ -13,7 +13,7 @@ function getDateForDetails(date) {
     var dt = "";
     dt += d.getDate() + " ";
     dt += $L('monthsLong_' + d.getMonth()) + " ";
-    dt += d.getYear() + " ";
+    dt += d.getFullYear() + " ";
     return dt;
 }
 
