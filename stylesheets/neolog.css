@@ -7,9 +7,9 @@
 
 .opIcon { padding-right: 6px; }
 
-.btn-post-cont { padding: 4px; width: 100%; text-align: center; margin-top: 10px; }
-.btn-post { background: url('../images/gaz.png') 0 0 no-repeat;
-    width: 280px; height: 64px; text-align: center; color: #ffffff; padding-top: 16px;
+.btn-gaz-cont { padding: 4px; width: 100%; text-align: center; margin-top: 10px; }
+.btn-gaz { background: url('../images/gaz.png') 0 0 no-repeat;
+    width: 280px; height: 34px; text-align: center; color: #ffffff; padding-top: 6px;
  }
 .post-cat-dd { width: 90%; /* background-color: #DF9368; color: #000000; */ }
 .btn-post-error { color: #df9368; }

@@ -11,7 +11,8 @@ enyo.kind({
             { name : "sendComent", className : "bgpattern", kind : "nl.SendComment", onBack : "goBack" },
             { name : "wordComments", className : "bgpattern", kind : "nl.ViewComments", onBack : "goBack" },
             { name : "sendWord", className : "bgpattern", kind : "nl.SendWord" },
-            { name : "search", className : "bgpattern", kind : "nl.Search" },
+            { name : "search", className : "bgpattern", kind : "nl.Search", onFound: "viewSearchResults" },
+            { name : "searchResults", className : "bgpattern", kind : "nl.SearchResults", onSelect : "viewWord", onBack : "goBack" },
             { name : "preferences", className : "bgpattern", kind : "nl.Preferences" },
             { name : "about", className : "bgpattern", kind : "nl.About" }
         ]
@@ -73,6 +74,10 @@ enyo.kind({
         this.$.pane.selectViewByName("wordComments");
         this.$.wordComments.setWord(inWord);
         this.$.wordComments.showItems();
+    },
+    viewSearchResults: function(inSender, inSearchQuery) {
+        this.$.pane.selectViewByName("searchResults");
+        this.$.searchResults.performSearch(inSearchQuery);
     },
     // ------------------------------------------------
     goBackLoading : function(inSender, inEvent) {

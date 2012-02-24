@@ -16,6 +16,7 @@ enyo.depends(
   'source/screens/ViewComments.js',
   'source/screens/SendWord.js',
   'source/screens/Search.js',
+  'source/screens/SearchResults.js',
   'source/screens/Preferences.js',
   'source/screens/About.js'
 );
