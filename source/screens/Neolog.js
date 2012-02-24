@@ -72,6 +72,7 @@ enyo.kind({
     viewWordComments: function(inSender, inWord) {
         this.$.pane.selectViewByName("wordComments");
         this.$.wordComments.setWord(inWord);
+        this.$.wordComments.showItems();
     },
     // ------------------------------------------------
     goBackLoading : function(inSender, inEvent) {

@@ -175,20 +175,22 @@ enyo.kind({
       this.shareOption = 3;
       if (enyo.application.appSettings['InAppEmail']) {
           var emailBody = "";
-          emailBody += this.word.word + "<br /><br />";
-          /*
-          emailBody += "<b>" + this.offer.title + "</b><br /><br />";
-          emailBody += "<i>" + getDateForDetails(this.offer.publishdate) + "</i><br /><br />";
-          emailBody += $L('FreelanceYn') + " " + ((this.offer.freelanceyn) ? $L('YES') : $L('NO')) + "<br /><br />";
-          if (this.offer.humanyn == "true") {
-              emailBody += "<b>" + $L('odetails_Human_Positiv') + "</b> " + this.offer.positivism + "<br /><br />";
-              emailBody += "<b>" + $L('odetails_Human_Negativ') + "</b> " + this.offer.negativism + "<br /><br />";
-          }
-          else {
-              emailBody += "<b>" + $L('odetails_Company_Positiv') + "</b> " + this.offer.positivism + "<br /><br />";
-              emailBody += "<b>" + $L('odetails_Company_Negativ') + "</b> " + this.offer.negativism + "<br /><br />";
-          }
-          */
+          emailBody += "<b>" + this.word.word + "</b><br>";
+          emailBody += this.word.description + "<br><br>";
+
+          if (this.word.example != "")
+              emailBody += "<b>" + $L('word_Examples') + "</b><br>" + this.word.example + "<br><br>";
+          if (this.word.ethimology != "")
+              emailBody += "<b>" + $L('word_Ethimology') + "</b><br>" + this.word.ethimology + "<br><br>";
+
+          emailBody += this.word.addedby + " @ " + getDateForDetails(this.word.addedatdate);
+
+          emailBody += '<div class="scAbout">'
+          if (this.word.addedbyemail != "" )
+              emailBody += "<br><a href=\"mailto:" + this.word.addedbyemail + "\">" + this.word.addedbyemail + "</a>";
+          if (this.word.addedbyurl != "" )
+              emailBody += "<br><a href=\"" + ((this.word.addedbyurl.substring(0, 7) == 'http://') ? '' : 'http://') + this.word.addedbyurl + "\">" + this.word.addedbyurl + "</a>";
+          emailBody += '</div>';
           emailBody += "<br /><br /> Sent from Neolog ...";
 
           var params =  {
