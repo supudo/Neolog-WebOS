@@ -11,5 +11,14 @@
     "Menu_Search" : "Търси",
     "Menu_Preferences" : "Настройки",
     "Menu_About" : "За Neolog",
-    "Menu_SearchResults" : "Резултати"
+    "Menu_SearchResults" : "Резултати",
+    "close_alertbox" : "ОК",
+    "YES" : "Да",
+    "NO" : "Не",
+    "prefs_PrivateData_title" : "Лични данни",
+    "prefs_PrivateData_desc" : "Помни?",
+    "prefs_OnlineSearch_title" : "Търсене",
+    "prefs_OnlineSearch_desc" : "Онлайн?",
+    "prefs_InAppEmail_title" : "Email",
+    "prefs_InAppEmail_desc" : "От устройството?"
 }
