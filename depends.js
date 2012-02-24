@@ -10,6 +10,7 @@ enyo.depends(
   'source/screens/Neolog.js',
   'source/screens/Loading.js',
   'source/screens/LettersAndNests.js',
+  'source/screens/Words.js',
   'source/screens/WordDetails.js',
   'source/screens/SendWord.js',
   'source/screens/Search.js',

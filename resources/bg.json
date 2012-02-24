@@ -5,7 +5,8 @@
     "Loading" : "Зареждане...",
     "No Connection" : "В момента нямате Интернет връзка, затова ще работим в офлайн режим.",
     "Back" : "Назад",
-    "Menu_LettersAndNests" : "Думи",
+    "Menu_LettersAndNests" : "Гнезда и Букви",
+    "Menu_Words" : "Думи",
     "Menu_WordDetails" : "Дума",
     "Menu_SendWord" : "Изпрати дума",
     "Menu_Search" : "Търси",
@@ -20,5 +21,8 @@
     "prefs_OnlineSearch_title" : "Търсене",
     "prefs_OnlineSearch_desc" : "Онлайн?",
     "prefs_InAppEmail_title" : "Email",
-    "prefs_InAppEmail_desc" : "От устройството?"
+    "prefs_InAppEmail_desc" : "От устройството?",
+    "headerNestsAndLetters" : "Гнезда и Букви",
+    "headerNests" : "Гнезда",
+    "headerLetters" : "Букви",
 }

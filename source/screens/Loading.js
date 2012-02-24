@@ -114,7 +114,7 @@ enyo.kind({
                             t.orderpos = ent.orderpos;
                             enyo.application.persistence.add(t);
                             that.nestsSynced++;
-                            logThis(that, "total = " + that.nestsTotal + "; synced new = " + that.nestsSynced);
+                            //logThis(that, "total = " + that.nestsTotal + "; synced new = " + that.nestsSynced);
                             that.nestsSync();
                         }
                         else {
@@ -122,7 +122,7 @@ enyo.kind({
                             existing.nest = ent.nest;
                             existing.orderpos = ent.orderpos;
                             that.nestsSynced++;
-                            logThis(that, "total = " + that.nestsTotal + "; synced existing = " + that.nestsSynced);
+                            //logThis(that, "total = " + that.nestsTotal + "; synced existing = " + that.nestsSynced);
                             that.nestsSync();
                         }
                     });

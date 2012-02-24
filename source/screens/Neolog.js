@@ -2,13 +2,11 @@ enyo.kind({
     name : "nl.Neolog",
     kind : enyo.VFlexBox,
     components : [ {
-        name : "pane",
-        kind : "Pane",
-        flex : 1,
-        onSelectView: "viewChanged",
+        name : "pane", kind : "Pane", flex : 1, onSelectView: "viewChanged",
         components : [
             { name : "loading", className : "bgpattern", kind : "nl.Loading", onBack : "goBackLoading" },
-            { name : "words", className : "bgpattern", kind : "nl.LettersAndNests", onSelect : "viewWord" },
+            { name : "lettersAndNests", className : "bgpattern", kind : "nl.LettersAndNests", onNestSelect : "viewNest", onLetterSelect: "viewLetter" },
+            { name : "words", className : "bgpattern", kind : "nl.Words", onBack : "goBack", onSelect : "viewWord" },
             { name : "wordDetails", className : "bgpattern", kind : "nl.WordDetails", onBack : "goBack" },
             { name : "sendWord", className : "bgpattern", kind : "nl.SendWord" },
             { name : "search", className : "bgpattern", kind : "nl.Search" },
@@ -46,6 +44,12 @@ enyo.kind({
         this.$.appMenu.close();
     },
     // ------------------------------------------------
+    viewNest: function (inSender, inNest) {
+        this.$.pane.selectViewByName("words");
+    },
+    viewLetter: function (inSender, inLetter) {
+        this.$.pane.selectViewByName("words");
+    },
     viewWord : function(inSender, inWord) {
         this.$.pane.selectViewByName("wordDetails");
         //this.$.wordDetails.setWord(inWord);
@@ -60,8 +64,7 @@ enyo.kind({
     },
     // Menu ------------------------------------------------
     showLettersAndNests : function() {
-        this.$.pane.selectViewByName("words");
-        //this.$.words.loadThings();
+        this.$.pane.selectViewByName("lettersAndNests");
     },
     showSendWord : function() {
         this.$.pane.selectViewByName("sendWord");
