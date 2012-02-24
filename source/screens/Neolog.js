@@ -64,6 +64,7 @@ enyo.kind({
         //this.$.words.loadThings();
     },
     showSendWord : function() {
+        this.$.pane.selectViewByName("sendWord");
     },
     showSearch : function() {
         this.$.pane.selectViewByName("search");

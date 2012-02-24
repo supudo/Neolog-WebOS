@@ -1,5 +1,5 @@
 enyo.application.persistence = persistence;
-persistence.store.websql.config(persistence, 'neolog.webos', "Neolog for webOS", 65536);
+persistence.store.websql.config(persistence, 'neolog.webos', "Neolog for WebOS", 65536);
 persistence.search.config(persistence, persistence.store.websql.sqliteDialect);
 enyo.application.models = {};
 

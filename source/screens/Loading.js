@@ -101,7 +101,7 @@ enyo.kind({
                 this.$.loadingProgress.setPosition(1);
                 this.syncNests();
             }
-            else {
+            else if (inResponse.GetNests != null) {
                 var that = this;
                 this.nestsTotal = inResponse.GetNestsCount;
                 this.$.loadingProgressSmall.setMaximum(this.nestsTotal);
@@ -128,6 +128,8 @@ enyo.kind({
                     });
                 }, this);
             }
+            else
+                this.syncDone();
         }
         else
             this.syncFailed();
@@ -141,7 +143,6 @@ enyo.kind({
         this.doBack();
     },
     nestsSync: function() {
-        logThis(this, "total = " + that.nestsTotal + "; synced existing = " + that.nestsSynced);
         if (this.nestsTotal == this.nestsSynced) {
             enyo.application.persistence.flush(function(){});
             logThis(this, "Sync done ... nests!");

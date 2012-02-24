@@ -17,3 +17,6 @@
 .btn-send-message { background-color: #df9368; color: #000000; }
 
 .btn-share { background: url('../images/soc-share.png') 0 0 no-repeat; width: 44px; height: 44px; border: 0px; }
+
+.scAbout a { color: #ff7140; text-decoration: underline; font-style: italic; }
+.scAbout a:hover { text-decoration: none; }

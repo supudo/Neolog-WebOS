@@ -30,8 +30,10 @@ enyo.kind({
   viewAbout: function() {
       var that = this;
       TextContent.all().filter('cid', '=', '2').one(null, function(tc) {
-          if (tc)
-              that.$.txtContent.setContent(tc.content);
+          if (tc) {
+              var c = "<div class=\"scAbout\">" + tc.content + "</div>";
+              that.$.txtContent.setContent(c);
+          }
       });
   },
   htmlContentLinkClick: function(inSender, inUrl) {
